@@ -1,0 +1,418 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400|Space+Mono:400');
+
+:root {
+  /*Define colors as colors*/
+  --green: #27E4C3;
+  --red: #F43763;
+  --yellow: #fde42f;
+  --black: #1b2d45;
+  --darkBlue: #002167;
+  --grey: #bfbfbf;
+  --lightGrey: #f2f4f6;
+  --darkGrey: #222;
+  --white: #fff;
+  --orange: #d1b758;
+  --tan: #efe4b0;
+
+  /* Define color intentions*/
+  --primary: var(--green);
+  --danger: var(--red);
+  --background: var(--lightGrey);
+  --cardBg: var(--white);
+  --headerBackground: var(--green);
+  --footerBackground: var(--black);
+  --textColor: var(--black);
+  --buttonTextColor: var(--black);
+  --lineColor: var(--grey);
+  --tableBackground: var(--tan);
+
+  /* Styles */
+  --line: solid 1px var(--lineColor);
+
+  /* Type */
+  --headingFont: 'Space Mono', monospace;
+  --bodyFont: 'Work Sans', sans-serif;
+  --baseFontSize: 100%;
+  --h1: 3.052rem;
+  --h2: 2.441rem;
+  --h3: 1.953rem;
+  --h4: 1.563rem;
+  --h5: 1.25rem;
+  --smallText: 0.8rem;
+
+  /* Elevation */
+  --level-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --level-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --level-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --level-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --level-5: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+  /* Positioning */
+  --containerPadding: 2.5%;
+  --headerHeight: 4rem;
+  --borderRadius: 10px;
+}
+
+/* From Type Scale */
+
+html {
+  font-size: var(--baseFontSize);
+  box-sizing: border-box;
+  text-decoration: none;
+} /*18px*/
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--bodyFont);
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+header {
+  --textColor: var(--white);
+
+  background: var(--headerBackground);
+  color: var(--textColor);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: var(--headerHeight);
+  box-shadow: var(--level-2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--containerPadding);
+}
+
+footer a {
+  color: var(--footerTextColor);
+}
+
+footer p {
+  margin-bottom: none;
+  max-width: none;
+}
+
+p {
+  max-width: 40em;
+  margin-bottom: 1rem;
+}
+
+p a,
+blockquote a {
+  color: var(--textColor);
+  text-decoration: none;
+  border-bottom: solid 2px var(--primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 3rem 0 1.38rem;
+  font-family: var(--headingFont);
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: var(--h1);
+}
+
+h2 {
+  font-size: var(--h2);
+}
+
+h3 {
+  font-size: var(--h3);
+}
+
+h4 {
+  font-size: var(--h4);
+}
+
+h5 {
+  font-size: var(--h5);
+}
+
+small,
+.text_small {
+  font-size: var(--smallText);
+}
+
+/*End Type Scale*/
+
+body {
+  background: var(--background);
+  color: var(--textColor);
+  margin-top: var(--headerHeight);
+}
+
+blockquote {
+  margin: 10px;
+  padding: 2em;
+  background: var(--cardBg);
+  box-shadow: var(--level-3);
+}
+
+label {
+  display: block;
+  font-size: var(--smallText);
+}
+
+input,
+textarea,
+select {
+  max-width: 300px;
+  padding: 4px 5px;
+  border: var(--line);
+  border-radius: var(--borderRadius);
+  margin-bottom: 24px;
+}
+
+textarea {
+  width: 100%;
+  height: 5rem;
+}
+
+::placeholder {
+  color: var(--grey);
+}
+
+hr {
+  border-top: var(--line);
+}
+
+button {
+  --buttonColor: var(--primary);
+
+  cursor: pointer;
+  appearance: none;
+  color: var(--buttonTextColor);
+  background-color: var(--buttonColor);
+  border: none;
+  border-radius: var(--borderRadius);
+  padding: 5px 25px;
+  box-shadow: var(--level-1);
+  transition: 0.3s ease-in-out box-shadow;
+}
+
+button:hover {
+  box-shadow: var(--level-2);
+}
+
+button[disabled] {
+  opacity: 0.4;
+}
+
+button.cancel {
+  --buttonColor: var(--danger);
+  --textColor: var(--white);
+}
+
+button.small {
+  font-size: var(--smallText);
+}
+
+.link-button {
+  cursor: pointer;
+}
+
+.layout {
+  padding: calc(3rem + var(--headerHeight)) var(--containerPadding);
+}
+
+.grid {
+  --gridColumns: 2;
+  display: block;
+  grid-template-columns: repeat(var(--gridColumns), 1fr);
+}
+
+.cols-3 {
+  --gridColumns: 3;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 20px;
+}
+
+.flex {
+  --justify-content: space-between;
+
+  display: block;
+  justify-content: var(--justify-content);
+}
+
+.flex-around {
+  --justify-content: space-around;
+}
+
+@media only screen and (min-width: 500px) {
+  :root {
+    --baseFontSize: 112.5%;
+  }
+  .grid {
+    display: grid;
+  }
+  .flex {
+    display: flex;
+  }
+}
+
+.fake-logo {
+  font-size: var(--baseFontSize);
+  margin: 0;
+}
+
+.page-headline {
+  text-align: center;
+}
+
+.cardContainer {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  margin: 10px;
+  padding: 2em;
+  border-radius: var(--borderRadius);
+  background: var(--cardBg);
+  box-shadow: var(--level-3);
+  color: inherit;
+  width: 800px;
+}
+
+.card section{
+  display: flex;
+  justify-content: space-between;
+}
+
+.card h3 {
+  color: var(--green);
+  text-align: center;
+}
+
+.card img {
+  max-height: 200px;
+}
+
+/* First child should never have margin top */
+.card > *:first-child {
+  margin-top: 0;
+}
+
+/* Last child should never have margin bottom */
+.card > *:last-child {
+  margin-bottom: 0;
+}
+
+.centeredContent {
+  display: flex;
+  height: 75vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.dark {
+  --cardBg: var(--darkGrey);
+  --background: var(--black);
+  --textColor: var(--lightGrey);
+  --buttonTextColor: var(--black);
+  --headerBackground: var(--darkGrey);
+  --footerBackground: var(--darkGrey);
+}
+
+.oled {
+  --black: #000;
+
+  --cardBg: var(--darkGrey);
+  --textColor: var(--lightGrey);
+  --headerBackground: var(--darkGrey);
+  --footerBackground: var(--darkGrey);
+}
+
+.theme {
+  --green: #00ebc7;
+  --red: #ff5470;
+  --yellow: #fde42f;
+  --black: #1b2d45;
+  --darkBlue: #994ff3;
+  --grey: #bfbfbf;
+  --lightGrey: #f2f4f6;
+  --darkGrey: #222;
+  --white: #fff;
+
+  /* Define color intentions*/
+  --primary: #4fc4cf;
+  --danger: var(--red);
+  --background: var(--yellow);
+  --cardBg: var(--white);
+  --headerBackground: var(--darkBlue);
+  --footerBackground: var(--darkGrey);
+  --textColor: black;
+  --buttonTextColor: black;
+  --lineColor: var(--darkBlue);
+
+  /* Styles */
+  --line: solid 1px var(--lineColor);
+
+  /* Type */
+  --headingFont: 'Roboto', monospace;
+  --bodyFont: 'Work Sans', sans-serif;
+  --baseFontSize: 120%;
+  --h1: 3.052rem;
+  --h2: 2.441rem;
+  --h3: 1.953rem;
+  --h4: 1.563rem;
+  --h5: 1.25rem;
+  --smallText: 0.8rem;
+
+  /* Elevation */
+  --level-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --level-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --level-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --level-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --level-5: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+  /* Positioning */
+  --containerPadding: 2.5%;
+  --headerHeight: 4rem;
+  --borderRadius: 10px;
+}
