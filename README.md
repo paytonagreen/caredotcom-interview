@@ -6,11 +6,9 @@ Hi there! I hope you enjoy walking through my humble one-pager!
 
 I've set up a very basic Rails app to display the required information -- the longer I spent with the data, the more nuance I found; the more nuance I found, the more the risk of scope creep grew. I settled on rendering the core basics in what I think is a pretty visually appealing style.
 
-After starting the server, navigate to '/events'.
-
 ## Functionality
 
-The functionality of the page is primarily written in JS, which I gather is a pretty common use-case in frontend Rails land (my primary Rails experience is in API work). I did set up the files manually rather than using `rails g resource` to show that I understand the basics of setting up the route.
+The functionality of the page is primarily written in JS, which I gather is a pretty common use-case in frontend Rails land (my primary Rails experience is in API work). I did set up the files manually rather than using `rails g resource` to show that I understand how routing works, etc.
 
 ## Style
 
