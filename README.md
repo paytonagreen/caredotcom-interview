@@ -1,6 +1,6 @@
 # Cart.com Project
 
-Hi there! I hope you enjoy walking through my humble one-pager here.
+Hi there! I hope you enjoy walking through my humble one-pager!
 
 ## Overview
 
@@ -18,7 +18,7 @@ I used a reset I've pieced together over time, customizing some elements of the 
 
 ## Testing
 
-I learned some Capybara (as Max mentioned that's the preferred frontend framework), and wrote a very basic test, but I think it gives us a pretty good degree of confidence that things are funcitoning as they should. It's running on Rspec (command `rspec spec/events.rb`).
+I learned some Capybara (as Max mentioned that it's the preferred frontend framework), and wrote a very basic test, but I think it gives us a pretty good degree of confidence that things are functioning as they should. It's running on Rspec (command `rspec spec/events.rb`).
 
 Under normal circumstances I would seed or mock data to gain tighter control of the final outcome, which would allow for more/more detailed assertions.
 
