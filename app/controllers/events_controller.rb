@@ -9,9 +9,9 @@ class EventsController < ActionController::Base
 
     req = Net::HTTP::Get.new(uri)
     req['Api-key'] = ENV['API_KEY']
-
     http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = true
+    
     res = http.request(req)
     data = JSON.parse(res.body, object_class: OpenStruct)
 

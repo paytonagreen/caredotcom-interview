@@ -1,25 +1,16 @@
-# Cart.com Project
+# Cart.com Project, Improvments, v2
 
-Hi there! I hope you enjoy walking through my humble one-pager!
+I hope I've made the best of this opportunity! I had a lot of fun getting this together. In this version:
 
-## Overview
-
-I've set up a very basic Rails app to display the required information -- the longer I spent with the data, the more nuance I found; the more nuance I found, the more the risk of scope creep grew. I settled on rendering the core basics in what I think is a pretty visually appealing style.
-
-## Functionality
-
-The functionality of the page is primarily written in JS, which I gather is a pretty common use-case in frontend Rails land (my primary Rails experience is in API work). I did set up the files manually rather than using `rails g resource` to show that I understand how routing works, etc.
-
-## Style
-
-I used a reset I've pieced together over time, customizing some elements of the card and making a few custom classes, as well as sampling the shade of green used on the Galore site. I was going to use the font, as well, but it wasn't available from Google!
-
-## Testing
-
-I learned some Capybara (as Max mentioned that it's the preferred frontend framework), and wrote a very basic test, but I think it gives us a pretty good degree of confidence that things are functioning as they should. It's running on Rspec (command `rspec spec/events.rb`).
-
-Under normal circumstances I would seed or mock data to gain tighter control of the final outcome, which would allow for more/more detailed assertions.
-
-## Conculsion
-
-This was fun, I learned some cool new tricks, and I hope to have the chance to learn more as part of the team!
+- All JS functionality is ported over to Ruby
+  - HTTP Request is made via controller, using 'net/http' library
+  - All helper functions are written in Ruby, organized in `helpers/events_helper.rb`, referenced via embedded Ruby
+  - Cards are properly rendered via `views/events/_event.html.erb` partial, using collection method to automatically map members to HTML
+- Tests are improved
+  - Used VCR library to capture a valid response from API, store for reuse
+  - Stable data allows for improved assertions in tests
+  - Tested proper deserialization of JSON object to OpenStruct Ruby object
+  - Tested proper conversion of object attributes to properly formatted values in view
+- Used env
+  - Used `dotenv` gem to set up `.env` file, will be required to run code properly
+  - Set up `.env` in root, add `API_KEY=YOUR_API_KEY_HERE`
