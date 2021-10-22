@@ -9,7 +9,7 @@ I hope I've made the best of this opportunity! I had a lot of fun getting this t
 - Tests are improved
   - Used VCR library to capture a valid response from API, store for reuse
   - Stable data allows for improved assertions in tests
-  - Tested proper deserialization of JSON object to OpenStruct Ruby object
+  - Tested proper deserialization of JSON object to Ruby hash
   - Tested proper conversion of object attributes to properly formatted values in view
 - Used env
   - Used `dotenv` gem to set up `.env` file, will be required to run code properly

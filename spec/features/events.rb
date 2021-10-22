@@ -50,10 +50,10 @@ describe EventsController, type: :request do
     end
     
     expect(assigns[:activities].length).to be(29)
-    expect(assigns[:activities][0]['title']).to eq('Colorado Yoga')
-    expect(assigns[:activities][0]['price']).to eq('25.0')
-    expect(assigns[:activities][0]['start_time_iso_string']).to eq('2021-10-22T08:00:00-06:00')
-    expect(assigns[:activities][0]['activity_location']['location']['city']).to eq('Boulder')
+    expect(assigns[:activities][0][:title]).to eq('Colorado Yoga')
+    expect(assigns[:activities][0][:price]).to eq('25.0')
+    expect(assigns[:activities][0][:start_time_iso_string]).to eq('2021-10-22T08:00:00-06:00')
+    expect(assigns[:activities][0][:activity_location][:location][:city]).to eq('Boulder')
 
   end
 
@@ -63,10 +63,10 @@ describe EventsController, type: :request do
     end
     
     expect(assigns[:series].length).to be(1)
-    expect(assigns[:series][0]['title']).to eq('big series DUPLICATE TEST')
-    expect(assigns[:series][0]['price']).to eq('100.0')
-    expect(assigns[:series][0]['sessions'][0]['start_time_iso_string']).to eq('2021-10-20T15:00:00-04:00')
-    expect(assigns[:series][0]['location_series']['location']['city']).to eq('San Francisco')
+    expect(assigns[:series][0][:title]).to eq('big series DUPLICATE TEST')
+    expect(assigns[:series][0][:price]).to eq('100.0')
+    expect(assigns[:series][0][:sessions][0][:start_time_iso_string]).to eq('2021-10-20T15:00:00-04:00')
+    expect(assigns[:series][0][:location_series][:location][:city]).to eq('San Francisco')
 
   end
 end

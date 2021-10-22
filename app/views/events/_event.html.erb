@@ -1,14 +1,14 @@
 <div class="card">
-  <h3><%= event["title"] %></h3>
+  <h3><%= event[:title] %></h3>
     <section>
       <div class="content">
         <p>Time: <%= format_date(event)%></p>
         <p>Location: <%= format_location(event)%></p>
-        <p>Price: <%= number_to_currency(event.price)%></p>
-        <a class="link-button" href=<%= event["web_url"]%>">
+        <p>Price: <%= number_to_currency(event[:price])%></p>
+        <a class="link-button" href=<%= event[:web_url]%>">
           <button>Book Now!</button>
         </a>
       </div>
-      <img src=<%=event["photos"][0]["small_url"]%> alt="<%= event["photos"][0]["caption"]%>" />
+      <img src=<%=event[:photos][0][:small_url]%> alt="<%= event[:photos][0][:caption]%>" />
     </section>
 </div>

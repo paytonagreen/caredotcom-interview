@@ -1,7 +1,6 @@
 require 'uri'
 require 'net/http'
 require 'json'
-require 'ostruct'
 
 class EventsController < ActionController::Base
   def index
@@ -11,11 +10,11 @@ class EventsController < ActionController::Base
     req['Api-key'] = ENV['API_KEY']
     http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = true
-    
-    res = http.request(req)
-    data = JSON.parse(res.body, object_class: OpenStruct)
 
-    @series = data["series"]
-    @activities = data["activities"]
+    res = http.request(req)
+    data = JSON.parse(res.body, symbolize_names: true)
+
+    @series = data[:series]
+    @activities = data[:activities]
   end
 end
