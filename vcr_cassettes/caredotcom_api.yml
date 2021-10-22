@@ -15,8 +15,6 @@ http_interactions:
       - Ruby
       Host:
       - api.getgalore-staging.com
-      Api-Key:
-      - y7LfciquwtdT4gCQgnNMzQxx
   response:
     status:
       code: 200
