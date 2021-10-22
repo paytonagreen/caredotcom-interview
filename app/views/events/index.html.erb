@@ -10,11 +10,7 @@
     <h2 class="page-headline">Our Best Events</h2>
 
     <div class="card-container">
-      <% @series.each do |event| %>
-        <%= render partial: "card", locals: { event: event, event_type: 'series', location: @location } %>
-      <% end %>
-      <% @activities.each do |event| %>
-        <%= render partial: "card", locals: { event: event, event_type: 'activity', location: @location } %>
-      <% end %>
+      <%= render partial: "event", collection: @activities %>
+      <%= render partial: "event", collection: @series %>
     </div>
 </body>

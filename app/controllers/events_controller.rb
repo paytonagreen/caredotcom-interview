@@ -13,9 +13,9 @@ class EventsController < ActionController::Base
     http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = true
     res = http.request(req)
-    @data = JSON.parse(res.body, object_class: OpenStruct)
+    data = JSON.parse(res.body, object_class: OpenStruct)
 
-    @series = @data["series"]
-    @activities = @data["activities"]
+    @series = data["series"]
+    @activities = data["activities"]
   end
 end

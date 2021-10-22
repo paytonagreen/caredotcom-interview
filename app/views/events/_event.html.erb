@@ -2,10 +2,8 @@
   <h3><%= event["title"] %></h3>
     <section>
       <div class="content">
-        <% if event_type == 'activity'%>
-          <p>Time: <%= format_date(event)%></p>
-        <% end %>
-        <p>Location: <%= format_location(event, event_type)%></p>
+        <p>Time: <%= format_date(event)%></p>
+        <p>Location: <%= format_location(event)%></p>
         <p>Price: <%= number_to_currency(event.price)%></p>
         <a class="link-button" href=<%= event["web_url"]%>">
           <button>Book Now!</button>
