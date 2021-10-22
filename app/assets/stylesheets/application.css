@@ -297,7 +297,7 @@ button.small {
   text-align: center;
 }
 
-.cardContainer {
+.card-container {
   width: 100vw;
   display: flex;
   flex-direction: column;
